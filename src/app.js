@@ -6,6 +6,7 @@ import { graphqlHTTP } from "express-graphql";
 import router from "./routes/index.routes.js";
 import { schema, root } from "./graphql/index.js";
 import "./config/passport.js";
+require('dotenv').config();
 
 const app = express();
 
