@@ -1,9 +1,18 @@
-import admin from "firebase-admin";
-
 /* admin.initializeApp({
   credential: admin.credential.cert(),
 });
 const db = admin.firestore(); */
+
+const admin = require('firebase-admin');
+
+const serviceAccount = require('../../ecommerce-371822-firebase-adminsdk-9odrx-836637513c.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const db = admin.firestore();
+
 
 class FirebaseDAO {
   constructor(collectionName) {
